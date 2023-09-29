@@ -1,7 +1,6 @@
 const { MongoClient } = require('mongodb')
-require('dotenv').config();
 
-const URI = process.env.MONGODB_CONNECTION_STRING;
+const URI = "mongodb+srv://Devoid:devoid123@devoiddb.em84a8m.mongodb.net/?retryWrites=true&w=majority";
 
 class DBClient{
     constructor(){

@@ -1,8 +1,7 @@
 const { sign, verify } = require("jsonwebtoken");
-require("dotenv").config();
 
 const createToken = (Model) => {
-  const token = sign(Model.username, process.env.TOKEN_SECRETE);
+  const token = sign(Model.username, "Anime-finanevu838uwh7924uundb");
   return token;
 };
 
@@ -15,7 +14,7 @@ const verifyToken = (req, res, next) => {
     }
     if (accessToken) {
       try {
-        const payload = verify(accessToken, process.env.TOKEN_SECRETE);
+        const payload = verify(accessToken, "Anime-finanevu838uwh7924uundb");
         if (payload) {
           req.authenticated = true;
           next();
